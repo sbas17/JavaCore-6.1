@@ -2,25 +2,25 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void delPart(double d) {
-        long dd = (long) d;
-        System.out.println(dd);
+    public static long delPart(double d) {
+        return (long) d;
     }
 
 
-    public static void compare(double a, double b) {
+    public static String compare(double a, double b) {
         double result = a - b;
+        String text;
         if (Math.abs(result) < 0.000000000000001) {
-            System.out.println("Числа равны");
+           text = "Числа равны";
         } else if (result < 0) {
-            System.out.println("Число " + b + " больше числа " + a + " на " + Math.abs(result));
+            text = "Число " + b + " больше числа " + a + " на " + Math.abs(result);
         } else {
-            System.out.println("Число " + a + " больше числа " + b + " на " + Math.abs(result));
+            text = "Число " + a + " больше числа " + b + " на " + Math.abs(result);
         }
-
+        return text;
     }
-    public static void round(double c) {
-        System.out.println(Math.round(c));
+    public static long round(double c) {
+        return Math.round(c);
     }
 
 
@@ -43,17 +43,17 @@ public class Main {
                         double a = scanner.nextDouble();
                         System.out.println("Введите второе число");
                         double b = scanner.nextDouble();
-                        compare(a, b);
+                        System.out.println(compare(a, b));
                         break;
                     case 2:
                         System.out.println("Введите число для округения");
                         double c = scanner.nextDouble();
-                        round(c);
+                        System.out.println(round(c));
                         break;
                     case 3:
                         System.out.println("Введите число, у которого необходимо отбросить дробную часть");
                         double d = scanner.nextDouble();
-                        delPart(d);
+                        System.out.println(delPart(d));
                         break;
                     default:
                         System.out.println("Такого числа нет в списке");
